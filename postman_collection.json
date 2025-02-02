@@ -1,0 +1,658 @@
+{
+	"info": {
+		"_postman_id": "a19f6880-b2cf-4061-b6e6-9746fd9d72f1",
+		"name": "GoLangEstudos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37950984"
+	},
+	"item": [
+		{
+			"name": "CriarUsuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Usuario 1\",\r\n    \"email\": \"usuario1@gmail.com\",\r\n    \"nick\": \"usuario1\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUsuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"usuario3@gmail.com\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarUsuarios",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios?usuario=teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarUsuarios Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios?usuario=teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarUsuario pelo ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios?usuario=teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizarUsuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Usuario 1 ATUALIZADO\",\r\n    \"email\": \"usuario1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizarSenhaUsuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Usuario 1\",\r\n    \"email\": \"usuario1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzMTMwNTQsInVzdWFyaW9JZCI6OX0.ru-r2nlkfKRFUZfOdgYLq_jOzZynduRM2jBQtQ_UMtI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SeguirUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzNzM5MjAsInVzdWFyaW9JZCI6M30.HzD8xDJETGix8K465Ox7CJuQOKQp3s8NFwhF7cAS8VI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1/seguir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1",
+						"seguir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PararDeSeguirUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzNzM5MjAsInVzdWFyaW9JZCI6M30.HzD8xDJETGix8K465Ox7CJuQOKQp3s8NFwhF7cAS8VI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1/seguir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1",
+						"seguir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarSeguidoresUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzNzM5MjAsInVzdWFyaW9JZCI6M30.HzD8xDJETGix8K465Ox7CJuQOKQp3s8NFwhF7cAS8VI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1/seguidores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1",
+						"seguidores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarSeguindoUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzNzM5MjAsInVzdWFyaW9JZCI6M30.HzD8xDJETGix8K465Ox7CJuQOKQp3s8NFwhF7cAS8VI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/1/seguidores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"1",
+						"seguidores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CriarPublicação",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzODg0MzcsInVzdWFyaW9JZCI6MX0.f5mACS-rl9PD6nd9pA6APEWU9Bu2Uu2hwkiHaO4tSx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Minha segunda publicação\",\r\n    \"conteudo\": \"Olá Mundo! Minha segunda publicação!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/publicacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPublicação",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzODg0MzcsInVzdWFyaW9JZCI6MX0.f5mACS-rl9PD6nd9pA6APEWU9Bu2Uu2hwkiHaO4tSx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Minha segunda publicação\",\r\n    \"conteudo\": \"Olá Mundo! Minha segunda publicação!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/publicacoes/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPublicações",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3Mzg0NTQ1MDYsInVzdWFyaW9JZCI6M30.nTo1OP2BHqCyP24IHda6rYwv037LZ-5FCQg1XIt8vts",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Minha segunda publicação\",\r\n    \"conteudo\": \"Olá Mundo! Minha segunda publicação!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/publicacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtualizarPublicação",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzODg0MzcsInVzdWFyaW9JZCI6MX0.f5mACS-rl9PD6nd9pA6APEWU9Bu2Uu2hwkiHaO4tSx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Minha segunda publicação\",\r\n    \"conteudo\": \"Olá Mundo! Minha segunda publicação!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/publicacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarPublicação",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MzgzODg0MzcsInVzdWFyaW9JZCI6MX0.f5mACS-rl9PD6nd9pA6APEWU9Bu2Uu2hwkiHaO4tSx8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Minha segunda publicação\",\r\n    \"conteudo\": \"Olá Mundo! Minha segunda publicação!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/publicacoes/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPublicaçõesPorUsuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/usuarios/2/publicacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"2",
+						"publicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurtirPublicação",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3Mzg0NTYwNTgsInVzdWFyaW9JZCI6MX0.NnxBp1PbGN2F5BSRqD049D4SrLJ7VRegL7A-vlR9Ljs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/publicacoes/9/curtir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes",
+						"9",
+						"curtir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DescurtirPublicação",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3Mzg0NTYwNTgsInVzdWFyaW9JZCI6MX0.NnxBp1PbGN2F5BSRqD049D4SrLJ7VRegL7A-vlR9Ljs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/publicacoes/3/descurtir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"publicacoes",
+						"3",
+						"descurtir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
